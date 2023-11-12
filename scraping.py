@@ -7,7 +7,6 @@ import datetime
 from gspread_dataframe import set_with_dataframe
 
 
-
 def get_data_udemy():
     url = 'https://scraping-for-beginner.herokuapp.com/udemy'
     res = requests.get(url)

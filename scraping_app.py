@@ -79,4 +79,5 @@ def get_chart():
     return chart
 
 data_ec = get_data_ec()
+
 chart = get_chart()

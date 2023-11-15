@@ -1,4 +1,4 @@
-
+from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 import gspread
@@ -6,6 +6,7 @@ from google.oauth2.service_account import Credentials
 import datetime
 from gspread_dataframe import set_with_dataframe
 import altair as alt
+import streamlit as st
 
 def get_data_ec():
     url_ec = 'https://scraping.official.ec/'
@@ -79,5 +80,9 @@ def get_chart():
     return chart
 
 data_ec = get_data_ec()
-
 chart = get_chart()
+
+st.title('スクレイピング活用アプリ')
+st.write('## Udemy情報')
+st.altair_chart(chart,use_container_width=True)
+st.write('## EC在庫情報',data_ec)
